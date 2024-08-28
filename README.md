@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Wallet
+
+## Overview
+
+**Wallet** is a web application built using Next.js that allows users to generate cryptocurrency wallets. As part of my learning journey in blockchain development, this project currently supports generating wallets for both Solana and Ethereum networks. The project is a work in progress, and there will be more updates and features added in the future.
+
+## Features
+
+- **Generate Solana Wallets**: Users can create new Solana wallets.
+- **Generate Ethereum Wallets**: Users can create new Ethereum wallets.
+- **User-Friendly Interface**: Simple and intuitive UI built with Next.js.
+
+## Technologies Used
+
+- **Next.js**: For building the frontend of the application.
+- **Blockchain Libraries**: To interact with Solana and Ethereum networks.
+- **JavaScript/TypeScript**: For application logic.
+
+## Future Enhancements
+
+- **Additional Blockchain Support**: Add support for other blockchain networks.
+- **Wallet Management**: Features to manage, store, and retrieve wallets.
+- **UI/UX Improvements**: Enhancements to the user interface for a better user experience.
 
 ## Getting Started
 
-First, run the development server:
+To run this project locally, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/your-username/wallet.git
+    cd wallet
+    ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install dependencies**:
+    ```bash
+    npm install
+    ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Run the development server**:
+    ```bash
+    npm run dev
+    ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4. **Open the application in your browser**:
+    ```
+    http://localhost:3000
+    ```
 
-## Learn More
+## Contributing
 
-To learn more about Next.js, take a look at the following resources:
+This project is open to contributions. If you have suggestions, ideas, or find issues, feel free to open an issue or submit a pull request.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+This project is licensed under the MIT License.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Note**: This project is in its early stages, and it is primarily a learning tool. Use it at your own risk.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
