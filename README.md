@@ -14,7 +14,7 @@
 
 - **Next.js**: For building the frontend of the application.
 - **Blockchain Libraries**: To interact with Solana and Ethereum networks.
-- **JavaScript/TypeScript**: For application logic.
+- **TypeScript**: For application logic.
 
 ## Future Enhancements
 
@@ -28,7 +28,7 @@ To run this project locally, follow these steps:
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/your-username/wallet.git
+    git clone https://github.com/Hh440/wallet.git
     cd wallet
     ```
 
