@@ -4,6 +4,8 @@ import { useState } from "react"
 import { derivePath } from "ed25519-hd-key";
 import nacl from "tweetnacl";
 import { Keypair, PublicKey } from "@solana/web3.js";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 import { EyeIcon, EyeOffIcon } from 'lucide-react'
 import bs58 from "bs58"
@@ -14,6 +16,7 @@ const SOLWALLET=({mnemonic}:{mnemonic:string[]})=>{
     const[currentIndex,setCuurrentIndex]=useState(0)
     const[wallet ,setWallet]= useState<Array<{name:string,publickey:string,privateKey:string}>>([])
     const [showPrivateKey, setShowPrivateKey] = useState<{ [key: string]: boolean }>({})
+    const router = useRouter()
 
     const handleSOL = ()=>{
 
@@ -46,6 +49,13 @@ const SOLWALLET=({mnemonic}:{mnemonic:string[]})=>{
         setShowPrivateKey(prev => ({ ...prev, [walletName]: !prev[walletName] }))
       }
 
+      
+
+
+
+     
+      
+
     return (
         <div className="mt-4">
              <button onClick={handleSOL} className="w-full p-2 bg-green-500 text-white rounded">Generate Solana Wallets</button>
@@ -56,6 +66,15 @@ const SOLWALLET=({mnemonic}:{mnemonic:string[]})=>{
                         <h3 className="font-semibold ">Generated Wallet:</h3>
                         {
                             wallet.map((wallet,index)=>(
+
+                             <Link href={{
+                                pathname:'/wallet',
+                                query:{
+                                    privateKey:wallet.privateKey,
+                                    publicKey:wallet.publickey
+
+                                },
+                             }}>
                                 <div key={index} className="p-4 border shadow-sm">
                                     <h4 className="font-semibold">{wallet.name}</h4>
                                     <p className="text-sm"><span className="font-medium">Public Key:</span>{wallet.publickey}</p>
@@ -66,7 +85,7 @@ const SOLWALLET=({mnemonic}:{mnemonic:string[]})=>{
                                         type={showPrivateKey[wallet.name] ? 'text':'password'}
                                         value={wallet.privateKey}
                                         readOnly
-                                        className="felx-grow border rounded p-1"
+                                        className="flex-grow border rounded p-1"
                                         />
 
                                         <button
@@ -81,7 +100,10 @@ const SOLWALLET=({mnemonic}:{mnemonic:string[]})=>{
 
                                     </div>
                                 </div>
+                                </Link> 
                             ))
+
+                           
                         }
 
                     </div>
