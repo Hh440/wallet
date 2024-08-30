@@ -1,6 +1,6 @@
 'use client'
 import { clusterApiUrl, Connection, Keypair, LAMPORTS_PER_SOL, PublicKey } from '@solana/web3.js';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams,useRouter } from 'next/navigation';
 import { useState,useEffect } from 'react';
 import { ArrowDownIcon, ArrowUpIcon, Code, CopyIcon, RefreshCwIcon } from "lucide-react"
 import bs58 from 'bs58'
@@ -10,6 +10,7 @@ import bs58 from 'bs58'
 const wallet =()=>{
     const searchParams = useSearchParams();
     const privateKey = searchParams.get('privateKey');
+    const router = useRouter()
    
     const [balance, setBalance] = useState<number | null>(null);
     const [publicKey, setPublicKey] = useState<string | null>(null);
@@ -58,6 +59,12 @@ const wallet =()=>{
       }
 
       const handlesend = ()=>{
+
+        sessionStorage.setItem('privateKey', privateKey);
+
+        router.push('/send')
+
+
 
       }
       const handleRecieve = ()=>{
